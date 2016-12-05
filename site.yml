@@ -1,0 +1,4 @@
+- hosts: prometheus
+  tags: [prometheus]
+  roles:
+    - caddy
