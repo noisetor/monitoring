@@ -1,0 +1,45 @@
+---
+- name: "Install packages"
+  apt: pkg={{ item }} state=latest install_recommends=no
+  with_items:
+    - ack-grep
+    - apt-transport-https
+    - bash-completion
+    - ca-certificates
+    - file
+    - git
+    - htop
+    - iftop
+    - inotify-tools
+    - iotop
+    - less
+    - lsof
+    - ltrace
+    - mediainfo
+    - mosh
+    - mtr-tiny
+    - screen
+    - strace
+    - tcpdump
+    - vim
+    - vnstat
+
+- name: "Add root screenrc"
+  copy:
+    src: screenrc
+    dest: /root/.screenrc
+
+#- name: "configure irqbalance"
+#  debconf:
+#    name: irqbalance
+#    question: irqbalance/oneshot
+#    value: true
+#    vtype: boolean
+#  when: kernel_package is defined
+
+#- name: "Upgrade kernel"
+#  apt: pkg={{ item }} state=latest install_recommends=no default_release=jessie-backports
+#  with_items:
+#    - "{{ kernel_package | default('') }}"
+#    - irqbalance
+#  when: kernel_package is defined
