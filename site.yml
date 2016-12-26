@@ -2,5 +2,7 @@
   tags: [prometheus]
   roles:
     # - caddy
-    - prometheus
+    - blackbox_exporter
     - grafana
+    - node_exporter
+    - prometheus
