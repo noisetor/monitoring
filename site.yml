@@ -6,3 +6,4 @@
     - grafana
     - node_exporter
     - prometheus
+    - snmp_exporter
