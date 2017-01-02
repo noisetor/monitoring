@@ -1,13 +1,11 @@
 default:
   walk:
-  - 1.3.6.1.2.1.1.3
-  - 1.3.6.1.2.1.2
-  - 1.3.6.1.2.1.31.1.1
+  - 1.3.6.1.2.1.1.3 # sysUpTime
+  - 1.3.6.1.2.1.2.2 # ifTable
+  - 1.3.6.1.2.1.31.1.1 # ifXTable
   metrics:
   - name: sysUpTime
     oid: 1.3.6.1.2.1.1.3
-  - name: ifNumber
-    oid: 1.3.6.1.2.1.2.1
   - name: ifIndex
     oid: 1.3.6.1.2.1.2.2.1.1
     indexes:
@@ -18,6 +16,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifType
     oid: 1.3.6.1.2.1.2.2.1.3
     indexes:
@@ -28,6 +34,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifMtu
     oid: 1.3.6.1.2.1.2.2.1.4
     indexes:
@@ -38,6 +52,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifSpeed
     oid: 1.3.6.1.2.1.2.2.1.5
     indexes:
@@ -48,6 +70,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifAdminStatus
     oid: 1.3.6.1.2.1.2.2.1.7
     indexes:
@@ -58,6 +88,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOperStatus
     oid: 1.3.6.1.2.1.2.2.1.8
     indexes:
@@ -68,6 +106,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifLastChange
     oid: 1.3.6.1.2.1.2.2.1.9
     indexes:
@@ -78,6 +124,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInOctets
     oid: 1.3.6.1.2.1.2.2.1.10
     indexes:
@@ -88,6 +142,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.11
     indexes:
@@ -98,6 +160,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInNUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.12
     indexes:
@@ -108,6 +178,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInDiscards
     oid: 1.3.6.1.2.1.2.2.1.13
     indexes:
@@ -118,6 +196,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInErrors
     oid: 1.3.6.1.2.1.2.2.1.14
     indexes:
@@ -128,6 +214,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInUnknownProtos
     oid: 1.3.6.1.2.1.2.2.1.15
     indexes:
@@ -138,6 +232,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutOctets
     oid: 1.3.6.1.2.1.2.2.1.16
     indexes:
@@ -148,6 +250,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.17
     indexes:
@@ -158,6 +268,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutNUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.18
     indexes:
@@ -168,6 +286,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutDiscards
     oid: 1.3.6.1.2.1.2.2.1.19
     indexes:
@@ -178,6 +304,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutErrors
     oid: 1.3.6.1.2.1.2.2.1.20
     indexes:
@@ -188,6 +322,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutQLen
     oid: 1.3.6.1.2.1.2.2.1.21
     indexes:
@@ -198,6 +340,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.2
     indexes:
@@ -208,6 +358,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifInBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.3
     indexes:
@@ -218,6 +376,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.4
     indexes:
@@ -228,6 +394,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifOutBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.5
     indexes:
@@ -238,6 +412,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCInOctets
     oid: 1.3.6.1.2.1.31.1.1.1.6
     indexes:
@@ -248,6 +430,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCInUcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.7
     indexes:
@@ -258,6 +448,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCInMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.8
     indexes:
@@ -268,6 +466,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCInBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.9
     indexes:
@@ -278,6 +484,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCOutOctets
     oid: 1.3.6.1.2.1.31.1.1.1.10
     indexes:
@@ -288,6 +502,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCOutUcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.11
     indexes:
@@ -298,6 +520,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCOutMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.12
     indexes:
@@ -308,6 +538,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHCOutBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.13
     indexes:
@@ -318,6 +556,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifLinkUpDownTrapEnable
     oid: 1.3.6.1.2.1.31.1.1.1.14
     indexes:
@@ -328,6 +574,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifHighSpeed
     oid: 1.3.6.1.2.1.31.1.1.1.15
     indexes:
@@ -338,6 +592,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifPromiscuousMode
     oid: 1.3.6.1.2.1.31.1.1.1.16
     indexes:
@@ -348,6 +610,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifConnectorPresent
     oid: 1.3.6.1.2.1.31.1.1.1.17
     indexes:
@@ -358,6 +628,14 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+    - labels:
+      - ifIndex
+      labelname: ifName
+      oid: 1.3.6.1.2.1.31.1.1.1.1
+    - labels:
+      - ifIndex
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
   - name: ifCounterDiscontinuityTime
     oid: 1.3.6.1.2.1.31.1.1.1.19
     indexes:
@@ -368,373 +646,11 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
-default_ifname:
-  walk:
-  - 1.3.6.1.2.1.1.3
-  - 1.3.6.1.2.1.2
-  - 1.3.6.1.2.1.31.1.1
-  metrics:
-  - name: sysUpTime
-    oid: 1.3.6.1.2.1.1.3
-  - name: ifNumber
-    oid: 1.3.6.1.2.1.2.1
-  - name: ifIndex
-    oid: 1.3.6.1.2.1.2.2.1.1
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifType
-    oid: 1.3.6.1.2.1.2.2.1.3
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
     - labels:
       - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifMtu
-    oid: 1.3.6.1.2.1.2.2.1.4
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifSpeed
-    oid: 1.3.6.1.2.1.2.2.1.5
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifAdminStatus
-    oid: 1.3.6.1.2.1.2.2.1.7
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOperStatus
-    oid: 1.3.6.1.2.1.2.2.1.8
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifLastChange
-    oid: 1.3.6.1.2.1.2.2.1.9
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInOctets
-    oid: 1.3.6.1.2.1.2.2.1.10
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInUcastPkts
-    oid: 1.3.6.1.2.1.2.2.1.11
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInNUcastPkts
-    oid: 1.3.6.1.2.1.2.2.1.12
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInDiscards
-    oid: 1.3.6.1.2.1.2.2.1.13
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInErrors
-    oid: 1.3.6.1.2.1.2.2.1.14
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInUnknownProtos
-    oid: 1.3.6.1.2.1.2.2.1.15
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutOctets
-    oid: 1.3.6.1.2.1.2.2.1.16
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutUcastPkts
-    oid: 1.3.6.1.2.1.2.2.1.17
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutNUcastPkts
-    oid: 1.3.6.1.2.1.2.2.1.18
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutDiscards
-    oid: 1.3.6.1.2.1.2.2.1.19
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutErrors
-    oid: 1.3.6.1.2.1.2.2.1.20
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutQLen
-    oid: 1.3.6.1.2.1.2.2.1.21
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInMulticastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.2
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifInBroadcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.3
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutMulticastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.4
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifOutBroadcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.5
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCInOctets
-    oid: 1.3.6.1.2.1.31.1.1.1.6
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCInUcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.7
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCInMulticastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.8
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCInBroadcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.9
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCOutOctets
-    oid: 1.3.6.1.2.1.31.1.1.1.10
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCOutUcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.11
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCOutMulticastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.12
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHCOutBroadcastPkts
-    oid: 1.3.6.1.2.1.31.1.1.1.13
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifLinkUpDownTrapEnable
-    oid: 1.3.6.1.2.1.31.1.1.1.14
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifHighSpeed
-    oid: 1.3.6.1.2.1.31.1.1.1.15
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifPromiscuousMode
-    oid: 1.3.6.1.2.1.31.1.1.1.16
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifConnectorPresent
-    oid: 1.3.6.1.2.1.31.1.1.1.17
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
-  - name: ifCounterDiscontinuityTime
-    oid: 1.3.6.1.2.1.31.1.1.1.19
-    indexes:
-    - labelname: ifIndex
-      type: Integer
-    lookups:
-    - labels:
-      - ifIndex
-      labelname: ifName
-      oid: 1.3.6.1.2.1.31.1.1.1.1
+      labelname: ifAlias
+      oid: 1.3.6.1.2.1.31.1.1.1.18
