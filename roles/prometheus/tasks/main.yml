@@ -1,15 +1,3 @@
-- name: Set OS = Linux arch = amd64
-  set_fact:
-    prometheus_tarball_url: "{{ prometheus_download_url }}/v{{ prometheus_version }}/prometheus-{{ prometheus_version }}.linux-amd64.tar.gz"
-    prometheus_path: "{{ prometheus_install_path }}/prometheus-{{ prometheus_version }}.linux-amd64"
-  when: ansible_system == "Linux" and ansible_architecture == "x86_64"
-
-- name: Set OS = Linux arch = arm
-  set_fact:
-    prometheus_tarball_url: "{{ prometheus_download_url }}/v{{ prometheus_version }}/prometheus-{{ prometheus_version }}.linux-armv7.tar.gz"
-    prometheus_path: "{{ prometheus_install_path }}/prometheus-{{ prometheus_version }}.linux-armv7"
-  when: ansible_system == "Linux" and ansible_architecture == "armv7l"
-
 - name: create Prometheus group
   group: name={{ prometheus_group }}  state=present
 
@@ -74,6 +62,7 @@
 - name: Install prometheus systemd service file
   notify:
   - reload systemd
+  - restart prometheus
   template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service

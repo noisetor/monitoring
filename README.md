@@ -22,3 +22,17 @@ Check the connectivity
 Deploy
 
     ansible-playbook site.yml
+
+## Setup hosts file
+
+Setup a hosts file
+
+    [prometheus]
+    prometheus-server
+
+    [node_exporter]
+    node-with-node-exporter
+
+Optional variables that you might need
+
+    node ansible_host=X.X.X.X go_arch=arm64

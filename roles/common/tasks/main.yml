@@ -1,13 +1,3 @@
-- name: Set go arch variable
-  set_fact:
-    go_arch: "amd64"
-  when: ansible_architecture == "x86_64"
-
-- name: Set go arch variable
-  set_fact:
-    go_arch: "armv7"
-  when: ansible_architecture == "armv7l"
-
 # FOSDEM stuff.
 #- include: configure_timezone.yml
 #- include: configure_sysctl.yml
