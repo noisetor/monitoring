@@ -1,3 +1,8 @@
+go_arch: amd64
+
 snmp_exporter_install_path: /srv/snmp_exporter
-snmp_exporter_version: 0.1.0
+snmp_exporter_version: 0.2.0
 snmp_exporter_download_url: https://github.com/prometheus/snmp_exporter/releases/download
+
+snmp_exporter_tarball_url: "{{ snmp_exporter_download_url }}/v{{ snmp_exporter_version }}/snmp_exporter-{{ snmp_exporter_version }}.linux-{{ go_arch }}.tar.gz"
+snmp_exporter_path: "{{ snmp_exporter_install_path }}/snmp_exporter-{{ snmp_exporter_version }}.linux-{{ go_arch }}"
