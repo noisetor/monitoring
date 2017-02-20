@@ -1,0 +1,6 @@
+caddy_features: prometheus
+caddy_config: |
+  gzip
+  root /var/www
+  prometheus
+  log /var/log/caddy/access.log

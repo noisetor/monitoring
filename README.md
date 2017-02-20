@@ -36,3 +36,9 @@ Setup a hosts file
 Optional variables that you might need
 
     node ansible_host=X.X.X.X go_arch=arm64
+
+## Submodules
+
+This repo includes git submodules to vendor external source.  You need to update them with this helper command.
+
+    ./update-submodules.sh
