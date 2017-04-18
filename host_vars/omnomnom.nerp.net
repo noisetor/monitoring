@@ -1,0 +1,4 @@
+prometheus_listen_address: localhost:9090
+node_exporter_listen_address: localhost:9100
+blackbox_exporter_listen_address: localhost:9115
+snmp_exporter_listen_address: localhost:9116
