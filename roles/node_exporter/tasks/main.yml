@@ -18,7 +18,6 @@
 
 - name: Install node_exporter systemd service file
   notify:
-  - reload systemd
   - restart node_exporter
   template:
     src: node_exporter.service

@@ -24,11 +24,14 @@
 
 - name: Install snmp_exporter systemd service file
   notify:
-  - reload systemd
   - restart snmp_exporter
   template:
     src: snmp_exporter.service
     dest: /etc/systemd/system/snmp_exporter.service
 
 - name: Enable and start snmp_exporter service
-  service: name=snmp_exporter state=started enabled=yes
+  systemd:
+    name: snmp_exporter.service
+    state: started
+    enabled: yes
+    daemon_reload: yes
