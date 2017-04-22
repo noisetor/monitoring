@@ -61,11 +61,14 @@
 
 - name: Install prometheus systemd service file
   notify:
-  - reload systemd
   - restart prometheus
   template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
 
 - name: Enable and start prometheus service
-  service: name=prometheus state=started enabled=yes
+  systemd:
+    name: prometheus.service
+    state: started
+    enabled: yes
+    daemon_reload: yes

@@ -25,13 +25,10 @@
     dest: /etc/systemd/system/node_exporter.service
 
 - name: Enable and start node_exporter service
-  service: name=node_exporter state=started enabled=yes
-
-- name: Install node_exporter defaults file
-  template:
-    src: defaults
-    dest: /etc/default/node_exporter
-  notify:
-  - restart node_exporter
+  systemd:
+    name: node_exporter.service
+    state: started
+    enabled: yes
+    daemon_reload: yes
 
 - include: smartmon_metrics.yml
