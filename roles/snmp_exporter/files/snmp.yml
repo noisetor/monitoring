@@ -8,6 +8,7 @@ default:
     oid: 1.3.6.1.2.1.1.3
   - name: ifIndex
     oid: 1.3.6.1.2.1.2.2.1.1
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -16,16 +17,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifType
     oid: 1.3.6.1.2.1.2.2.1.3
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -34,16 +39,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifMtu
     oid: 1.3.6.1.2.1.2.2.1.4
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -52,16 +61,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifSpeed
     oid: 1.3.6.1.2.1.2.2.1.5
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -70,16 +83,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifAdminStatus
     oid: 1.3.6.1.2.1.2.2.1.7
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -88,16 +105,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOperStatus
     oid: 1.3.6.1.2.1.2.2.1.8
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -106,16 +127,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifLastChange
     oid: 1.3.6.1.2.1.2.2.1.9
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -124,16 +149,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInOctets
     oid: 1.3.6.1.2.1.2.2.1.10
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -142,16 +171,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.11
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -160,16 +193,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInNUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.12
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -178,16 +215,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInDiscards
     oid: 1.3.6.1.2.1.2.2.1.13
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -196,16 +237,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInErrors
     oid: 1.3.6.1.2.1.2.2.1.14
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -214,16 +259,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInUnknownProtos
     oid: 1.3.6.1.2.1.2.2.1.15
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -232,16 +281,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutOctets
     oid: 1.3.6.1.2.1.2.2.1.16
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -250,16 +303,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.17
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -268,16 +325,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutNUcastPkts
     oid: 1.3.6.1.2.1.2.2.1.18
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -286,16 +347,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutDiscards
     oid: 1.3.6.1.2.1.2.2.1.19
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -304,16 +369,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutErrors
     oid: 1.3.6.1.2.1.2.2.1.20
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -322,16 +391,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutQLen
     oid: 1.3.6.1.2.1.2.2.1.21
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -340,16 +413,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.2
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -358,16 +435,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifInBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.3
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -376,16 +457,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.4
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -394,16 +479,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifOutBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.5
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -412,16 +501,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCInOctets
     oid: 1.3.6.1.2.1.31.1.1.1.6
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -430,16 +523,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCInUcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.7
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -448,16 +545,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCInMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.8
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -466,16 +567,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCInBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.9
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -484,16 +589,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCOutOctets
     oid: 1.3.6.1.2.1.31.1.1.1.10
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -502,16 +611,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCOutUcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.11
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -520,16 +633,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCOutMulticastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.12
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -538,16 +655,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHCOutBroadcastPkts
     oid: 1.3.6.1.2.1.31.1.1.1.13
+    type: counter
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -556,16 +677,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifLinkUpDownTrapEnable
     oid: 1.3.6.1.2.1.31.1.1.1.14
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -574,16 +699,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifHighSpeed
     oid: 1.3.6.1.2.1.31.1.1.1.15
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -592,16 +721,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifPromiscuousMode
     oid: 1.3.6.1.2.1.31.1.1.1.16
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -610,16 +743,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifConnectorPresent
     oid: 1.3.6.1.2.1.31.1.1.1.17
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -628,16 +765,20 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
   - name: ifCounterDiscontinuityTime
     oid: 1.3.6.1.2.1.31.1.1.1.19
+    type: gauge
     indexes:
     - labelname: ifIndex
       type: Integer
@@ -646,14 +787,17 @@ default:
       - ifIndex
       labelname: ifDescr
       oid: 1.3.6.1.2.1.2.2.1.2
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifName
       oid: 1.3.6.1.2.1.31.1.1.1.1
+      type: DisplayString
     - labels:
       - ifIndex
       labelname: ifAlias
       oid: 1.3.6.1.2.1.31.1.1.1.18
+      type: DisplayString
 aruba_wlan:
   walk:
   - 1.3.6.1.2.1.1.3
@@ -675,6 +819,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPdot11gAntennaGain
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.8
     indexes:
@@ -685,6 +830,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPNumRadios
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.9
     indexes:
@@ -695,6 +841,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPEnet1Mode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.10
     indexes:
@@ -705,6 +852,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPIpsecMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.11
     indexes:
@@ -715,6 +863,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPUpTime
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.12
     indexes:
@@ -725,6 +874,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBuilding
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.15
     indexes:
@@ -735,6 +885,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFloor
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.16
     indexes:
@@ -745,6 +896,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPLoc
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.17
     indexes:
@@ -755,6 +907,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPExternalAntenna
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.18
     indexes:
@@ -765,6 +918,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPStatus
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.19
     indexes:
@@ -775,6 +929,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPNumBootstraps
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.20
     indexes:
@@ -785,6 +940,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPNumReboots
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.21
     indexes:
@@ -795,6 +951,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPUnprovisioned
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.22
     indexes:
@@ -805,6 +962,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPMonitorMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.23
     indexes:
@@ -815,6 +973,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPMeshRole
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.31
     indexes:
@@ -825,6 +984,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPNumWarmReboots
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.35
     indexes:
@@ -835,6 +995,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPActiveUplink
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.38
     indexes:
@@ -845,6 +1006,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPConnectedAsStandby
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.41
     indexes:
@@ -855,6 +1017,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioNumber
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.1
     indexes:
@@ -867,6 +1030,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioType
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.2
     indexes:
@@ -879,6 +1043,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioChannel
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.3
     indexes:
@@ -891,6 +1056,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioTransmitPower
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.4
     indexes:
@@ -903,6 +1069,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.5
     indexes:
@@ -915,6 +1082,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioUtilization
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.6
     indexes:
@@ -927,6 +1095,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioNumAssociatedClients
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.7
     indexes:
@@ -939,6 +1108,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioNumMonitoredClients
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.8
     indexes:
@@ -951,6 +1121,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioNumActiveBSSIDs
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.9
     indexes:
@@ -963,6 +1134,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioNumMonitoredBSSIDs
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.10
     indexes:
@@ -975,6 +1147,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioHTMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.13
     indexes:
@@ -987,6 +1160,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRadioHTExtChannel
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.5.1.14
     indexes:
@@ -999,6 +1173,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidSlot
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.3
     indexes:
@@ -1013,6 +1188,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidPort
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.4
     indexes:
@@ -1027,6 +1203,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidPhyType
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.5
     indexes:
@@ -1041,6 +1218,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidRogueType
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.6
     indexes:
@@ -1055,6 +1233,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.7
     indexes:
@@ -1069,6 +1248,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidChannel
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.8
     indexes:
@@ -1083,6 +1263,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidUpTime
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.9
     indexes:
@@ -1097,6 +1278,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidInactiveTime
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.10
     indexes:
@@ -1111,6 +1293,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidLoadBalancing
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.11
     indexes:
@@ -1125,6 +1308,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidNumAssociatedStations
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.12
     indexes:
@@ -1139,6 +1323,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidPhyNumber
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.14
     indexes:
@@ -1153,6 +1338,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidHTMode
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.15
     indexes:
@@ -1167,6 +1353,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidHTExtChannel
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.16
     indexes:
@@ -1181,6 +1368,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPBssidSnr
     oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.7.1.18
     indexes:
@@ -1195,6 +1383,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPCurrentChannel
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.1
     indexes:
@@ -1209,6 +1398,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPNumClients
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.2
     indexes:
@@ -1223,6 +1413,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.3
     indexes:
@@ -1237,6 +1428,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxBytes
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.4
     indexes:
@@ -1251,6 +1443,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.5
     indexes:
@@ -1265,6 +1458,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxBytes
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.6
     indexes:
@@ -1279,6 +1473,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxDeauthentications
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.7
     indexes:
@@ -1293,6 +1488,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxDeauthentications
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.8
     indexes:
@@ -1307,6 +1503,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChannelThroughput
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.9
     indexes:
@@ -1321,6 +1518,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameRetryRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.10
     indexes:
@@ -1335,6 +1533,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameLowSpeedRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.11
     indexes:
@@ -1349,6 +1548,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameNonUnicastRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.12
     indexes:
@@ -1363,6 +1563,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameFragmentationRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.13
     indexes:
@@ -1377,6 +1578,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameBandwidthRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.14
     indexes:
@@ -1391,6 +1593,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameRetryErrorRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.15
     indexes:
@@ -1405,6 +1608,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChannelErrorRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.16
     indexes:
@@ -1419,6 +1623,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPFrameReceiveErrorRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.17
     indexes:
@@ -1433,6 +1638,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxDataPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.18
     indexes:
@@ -1447,6 +1653,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxDataBytes
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.19
     indexes:
@@ -1461,6 +1668,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxDataPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.20
     indexes:
@@ -1475,6 +1683,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxDataBytes
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.21
     indexes:
@@ -1489,6 +1698,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxDataPkts64
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.22
     indexes:
@@ -1503,6 +1713,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxDataBytes64
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.23
     indexes:
@@ -1517,6 +1728,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxDataPkts64
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.24
     indexes:
@@ -1531,6 +1743,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPTxDataBytes64
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.25
     indexes:
@@ -1545,6 +1758,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPWiredRxErrorPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.26
     indexes:
@@ -1559,6 +1773,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPRxErrorPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.1.1.27
     indexes:
@@ -1573,6 +1788,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChannelNumber
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.1
     indexes:
@@ -1585,6 +1801,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChNumStations
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.2
     indexes:
@@ -1597,6 +1814,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.3
     indexes:
@@ -1609,6 +1827,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotBytes
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.4
     indexes:
@@ -1621,6 +1840,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotRetryPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.5
     indexes:
@@ -1633,6 +1853,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotFragmentedPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.6
     indexes:
@@ -1645,6 +1866,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotPhyErrPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.7
     indexes:
@@ -1657,6 +1879,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTotMacErrPkts
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.8
     indexes:
@@ -1669,6 +1892,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChNoise
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.9
     indexes:
@@ -1681,6 +1905,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChCoverageIndex
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.10
     indexes:
@@ -1693,6 +1918,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChInterferenceIndex
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.11
     indexes:
@@ -1705,6 +1931,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameRetryRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.12
     indexes:
@@ -1717,6 +1944,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameLowSpeedRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.13
     indexes:
@@ -1729,6 +1957,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameNonUnicastRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.14
     indexes:
@@ -1741,6 +1970,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameFragmentationRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.15
     indexes:
@@ -1753,6 +1983,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameBandwidthRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.16
     indexes:
@@ -1765,6 +1996,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameRetryErrorRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.17
     indexes:
@@ -1777,6 +2009,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChBusyRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.18
     indexes:
@@ -1789,6 +2022,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChNumAPs
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.19
     indexes:
@@ -1801,6 +2035,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameReceiveErrorRate
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.20
     indexes:
@@ -1813,6 +2048,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTransmittedFragmentCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.21
     indexes:
@@ -1825,6 +2061,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChMulticastTransmittedFrameCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.22
     indexes:
@@ -1837,6 +2074,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFailedCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.23
     indexes:
@@ -1849,6 +2087,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChRetryCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.24
     indexes:
@@ -1861,6 +2100,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChMultipleRetryCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.25
     indexes:
@@ -1873,6 +2113,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFrameDuplicateCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.26
     indexes:
@@ -1885,6 +2126,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChRTSSuccessCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.27
     indexes:
@@ -1897,6 +2139,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChRTSFailureCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.28
     indexes:
@@ -1909,6 +2152,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChACKFailureCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.29
     indexes:
@@ -1921,6 +2165,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChReceivedFragmentCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.30
     indexes:
@@ -1933,6 +2178,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChMulticastReceivedFrameCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.31
     indexes:
@@ -1945,6 +2191,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChFCSErrorCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.32
     indexes:
@@ -1957,6 +2204,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTransmittedFrameCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.33
     indexes:
@@ -1969,6 +2217,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChWEPUndecryptableCount
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.34
     indexes:
@@ -1981,6 +2230,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChRxUtilization
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.35
     indexes:
@@ -1993,6 +2243,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChTxUtilization
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.36
     indexes:
@@ -2005,6 +2256,7 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
   - name: wlanAPChUtilization
     oid: 1.3.6.1.4.1.14823.2.2.1.5.3.1.6.1.37
     indexes:
@@ -2017,3 +2269,4 @@ aruba_wlan:
       - wlanAPMacAddress
       labelname: wlanAPName
       oid: 1.3.6.1.4.1.14823.2.2.1.5.2.1.4.1.3
+      type: DisplayString
