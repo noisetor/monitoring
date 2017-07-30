@@ -1,4 +1,4 @@
-caddy_features: prometheus
+caddy_features: http.prometheus
 caddy_config: |
   gzip
   root /var/www
