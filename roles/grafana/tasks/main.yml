@@ -4,13 +4,20 @@
     url: "https://packagecloud.io/gpg.key"
     state: present
 
+- name: ensure apt-transport-https is installed
+  apt:
+    package: apt-transport-https
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+
 - name: Install grafana repo
   apt_repository:
-    repo: deb https://packagecloud.io/grafana/stable/debian/ jessie main
+    repo: "deb https://packagecloud.io/grafana/stable/debian/ {{ ansible_distribution_release }} main"
     state: present
 
 - name: Install grafana package
-  apt: pkg={{ item }} state=latest install_recommends=no
+  apt: pkg={{ item }} state=latest install_recommends=no update_cache=yes cache_valid_time=3600
   with_items:
     - grafana
 
