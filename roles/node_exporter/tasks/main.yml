@@ -29,7 +29,7 @@
     - golang
     - git
     - spiped
-  when: ansible_system == "Linux" && ansible_distribution == "Debian"
+  when: ansible_system == "Linux" and ansible_distribution == "Debian"
   tags:
     - debian
 
