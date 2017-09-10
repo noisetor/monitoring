@@ -2,5 +2,5 @@
 arion.noisetor.net remote_user=root
 
 [node_exporter]
-exit-01a.noisetor.net 
-exit-03a.noisetor.net ansible_python_interpreter=/usr/local/bin/python2.7
+exit-01a.noisetor.net remote_user=root
+exit-03a.noisetor.net ansible_python_interpreter=/usr/local/bin/python2.7 remote_user=root

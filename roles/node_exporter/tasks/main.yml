@@ -7,18 +7,19 @@
     - "{{ node_exporter_install_path }}"
     - "{{ node_exporter_textfiles_path }}"
 
-- name: install golang & git (FreeBSD)
+- name: install golang, git, and spiped (FreeBSD)
   package:
     name: "{{ item }]"
     state: latest
   with_items:
     - go
     - git
+    - spiped
   when: ansible_system == "FreeBSD"
   tags:
     - freebsd
 
-- name: install golang & git (Debian)
+- name: install golang, git, and spiped (Debian)
   apt:
     package: "{{ item }}"
     state: latest
@@ -27,6 +28,7 @@
   with_items:
     - golang
     - git
+    - spiped
   when: ansible_system == "Linux" && ansible_distribution == "Debian"
   tags:
     - debian
