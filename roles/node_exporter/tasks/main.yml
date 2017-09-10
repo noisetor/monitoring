@@ -7,6 +7,50 @@
     - "{{ node_exporter_install_path }}"
     - "{{ node_exporter_textfiles_path }}"
 
+- name: install golang & git (FreeBSD)
+  package:
+    name: "{{ item }]"
+    state: latest
+  with_items:
+    - go
+    - git
+  when: ansible_system == "FreeBSD"
+  tags:
+    - freebsd
+
+- name: install golang & git (Debian)
+  apt:
+    package: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - golang
+    - git
+  when: ansible_system == "Linux" && ansible_distribution == "Debian"
+  tags:
+    - debian
+
+- name: make GOPATH directory
+  file:
+    dest: /opt/go
+    state: directory
+    owner: root
+    group: root
+  
+- name: clone node_exporter source code
+  git:
+    repo: https:/github.com/prometheus/node_exporter.git
+    dest: /opt/go/src/github.com/prometheus/node_exporter
+    depth: 1
+
+- name: build and install go
+  environment:
+    GOPATH: /opt/go
+  command: go install github.com/prometheus/node_exporter
+  args:
+    creates: /opt/go/bin/node_exporter
+
 - name: untar node_exporter tarball
   unarchive:
     src: "{{ node_exporter_tarball_url }}"
@@ -16,18 +60,16 @@
     group: root
     copy: no
 
-- name: Install node_exporter systemd service file
-  notify:
-  - restart node_exporter
-  template:
-    src: node_exporter.service
-    dest: /etc/systemd/system/node_exporter.service
-
-- name: Enable and start node_exporter service
-  systemd:
-    name: node_exporter.service
-    state: started
-    enabled: yes
-    daemon_reload: yes
-
-- include: smartmon_metrics.yml
+# - name: Install node_exporter systemd service file
+#   notify:
+#   - restart node_exporter
+#   template:
+#     src: node_exporter.service
+#     dest: /etc/systemd/system/node_exporter.service
+# 
+# - name: Enable and start node_exporter service
+#   systemd:
+#     name: node_exporter.service
+#     state: started
+#     enabled: yes
+#     daemon_reload: yes
