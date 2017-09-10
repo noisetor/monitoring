@@ -37,8 +37,6 @@
   file:
     dest: /opt/go
     state: directory
-    owner: root
-    group: root
   
 - name: clone node_exporter source code
   git:
