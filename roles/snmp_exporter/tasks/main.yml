@@ -11,8 +11,6 @@
     src: "{{ snmp_exporter_tarball_url }}"
     dest: "{{ snmp_exporter_install_path }}"
     mode: 0755
-    owner: root
-    group: root
     copy: no
 
 - name: Install config file
