@@ -42,7 +42,7 @@
   
 - name: clone node_exporter source code
   git:
-    repo: https:/github.com/prometheus/node_exporter.git
+    repo: https://github.com/prometheus/node_exporter.git
     dest: /opt/go/src/github.com/prometheus/node_exporter
     depth: 1
 
