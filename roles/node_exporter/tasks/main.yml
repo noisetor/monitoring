@@ -8,37 +8,19 @@
   with_items:
     - "{{ node_exporter_textfiles_path }}"
 
-- name: install golang, git, and spiped (FreeBSD)
-  package:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - go
-    - git
-    - spiped
-  when: ansible_system == "FreeBSD"
-  tags:
-    - freebsd
-
-- name: install golang, git, and spiped (Debian)
-  apt:
-    package: "{{ item }}"
-    state: latest
-    update_cache: yes
-    cache_valid_time: 3600
-  with_items:
-    - golang
-    - git
-    - spiped
-  when: ansible_system == "Linux" and ansible_distribution == "Debian"
-  tags:
-    - debian
-
 - name: make GOPATH directory
   file:
     dest: /opt/go
     state: directory
-  
+
+- name: execute Debian installation
+  include: debian.yml
+  when: ansible_distribution == "Debian"
+
+- name: execute FreeBSD installation
+  include: freebsd.yml
+  when: ansible_distribution == "FreeBSD"
+
 - name: clone node_exporter source code
   git:
     repo: https://github.com/prometheus/node_exporter.git
@@ -51,12 +33,3 @@
   command: go install github.com/prometheus/node_exporter
   args:
     creates: /opt/go/bin/node_exporter
-
-- name: install FreeBSD configuration file
-  when: ansible_system == "FreeBSD"
-  copy:
-    src: node_exporter.in
-    dest: /usr/local/etc/rc.d/node_exporter
-    mode: 0555
-  tags:
-    - freebsd

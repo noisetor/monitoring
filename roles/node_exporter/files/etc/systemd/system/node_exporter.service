@@ -1,0 +1,10 @@
+[Unit]
+Description=Node Exporter
+
+[Service]
+User=nobody
+EnvironmentFile=/etc/default/node_exporter
+ExecStart=/opt/go/bin/node_exporter $OPTIONS
+
+[Install]
+WantedBy=multi-user.target

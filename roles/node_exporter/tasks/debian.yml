@@ -1,0 +1,45 @@
+---
+
+- name: install golang, git, and spiped (Debian)
+  apt:
+    package: "{{ item }}"
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - golang
+    - git
+    - spiped
+  when: ansible_system == "Linux" and ansible_distribution == "Debian"
+  tags:
+    - debian
+
+- name: install environment default file (Debian)
+  when: ansible_distribution == "Debian"
+  copy:
+    src: /etc/default/node_exporter
+    dest: /etc/default/node_exporter
+    group: root
+    user: root
+  tags:
+    - debian
+
+- name: install node_exporter systemd unit (Debian)
+  when: ansible_distribution == "Debian"
+  copy:
+    src: /etc/systemd/system/node_exporter.service
+    dest: /etc/systemd/system/node_exporter.service
+    user: root
+    group: root
+  tags:
+    - debian
+  notify:
+    - systemd reload unit
+
+- name: Enable and start node_exporter service (Debian)
+  when: ansible_distribution == "Debian"
+  systemd:
+    name: node_exporter.service
+    state: started
+    enabled: yes
+    daemon_reload: yes
