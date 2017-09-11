@@ -1,0 +1,9 @@
+---
+
+- name: run Debian installation
+  include: debian.yml
+  when: ansible_distribution == "Debian"
+
+- name: run FreeBSD installation
+  include: freebsd.yml
+  when: ansible_distribution == "FreeBSD"

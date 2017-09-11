@@ -1,0 +1,35 @@
+---
+- name: install spiped
+  apt:
+    package: spiped
+    state: latest
+    update_cache: yes
+    cache_valid_time: 3600
+  tags:
+    - debian
+
+- name: install spiped systemd unit
+  copy:
+    src: /etc/systemd/system/spiped.service
+    dest: /etc/systemd/system/spiped.service
+  tags:
+    - debian
+    
+- name: copy the noisetor keyfile
+  copy:
+    src: /etc/spiped/noisetor.key
+    dest: /etc/spiped/noisetor.key
+    user: root
+    group: root
+    mode: 0600
+  tags:
+    - debian
+
+- name: enable the systemd spiped service
+  service:
+    name: spiped
+    state: running
+    enabled: yes
+    daemon_reload: yes
+  tags:
+    - debian

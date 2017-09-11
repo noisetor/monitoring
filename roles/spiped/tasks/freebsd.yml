@@ -1,0 +1,39 @@
+---
+- name: install spiped
+  package:
+    name: spiped
+    state: present
+  tags:
+    - freebsd
+
+- name: copy the noisetor keyfile
+  copy:
+    src: /etc/spiped/noisetor.key
+    dest: /etc/spiped/noisetor.key
+    user: root
+    group: wheel
+    mode: 0600
+  tags:
+    - freebsd
+
+- name: add rc.conf configuration
+  blockinfile:
+    path: /usr/local/etc/rc.conf
+    block: |
+      spiped_enable="YES"
+      spiped_pipes="noisetor"
+      spiped_pipe_noisetor_mode="decrypt"
+      spiped_pipe_noisetor_source="[0.0.0.0]:9101"
+      spiped_pipe_noisetor_target="[127.0.0.1]:9100"
+      spiped_pipe_noisetor_key="/etc/spiped/noisetor.key"
+
+  tags:
+    - freebsd
+
+- name: enable spiped service
+  service:
+    name: spiped
+    enabled: yes
+    state: running
+  tags:
+    - freebsd

@@ -1,0 +1,8 @@
+[Unit]
+Description=spiped tunnel for node_exporter
+
+[Service]
+ExecStart=/usr/bin/spiped -F -d -s [0.0.0.0]:9101 -t [127.0.0.1]:9100 -k /etc/spiped/noisetor.key
+
+[Install]
+WantedBy=multi-user.target
