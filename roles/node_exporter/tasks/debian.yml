@@ -1,6 +1,6 @@
 ---
 
-- name: install golang, git, and spiped (Debian)
+- name: install golang and git (Debian)
   apt:
     package: "{{ item }}"
     state: latest
@@ -9,7 +9,6 @@
   with_items:
     - golang
     - git
-    - spiped
   when: ansible_system == "Linux" and ansible_distribution == "Debian"
   tags:
     - debian

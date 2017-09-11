@@ -1,13 +1,12 @@
 ---
 
-- name: install golang, git, and spiped (FreeBSD)
+- name: install golang and git (FreeBSD)
   package:
     name: "{{ item }}"
     state: present
   with_items:
     - go
     - git
-    - spiped
   when: ansible_system == "FreeBSD"
   tags:
     - freebsd
@@ -18,5 +17,13 @@
     src: /usr/local/etc/rc.d/node_exporter
     dest: /usr/local/etc/rc.d/node_exporter
     mode: 0555
+  tags:
+    - freebsd
+
+- name: enable node_exporter service
+  service:
+    name: node_exporter
+    enabled: yes
+    state: started
   tags:
     - freebsd
