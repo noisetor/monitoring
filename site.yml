@@ -1,9 +1,7 @@
 - hosts: prometheus
   tags: [prometheus]
   roles:
-    # - antoiner77.caddy
     - blackbox_exporter
-    # - grafana
     - node_exporter
     - prometheus
     - snmp_exporter
@@ -12,3 +10,10 @@
   tags: [node_exporter]
   roles:
     - node_exporter
+
+- hosts: grafana
+  tags: [grafana]
+  roles:
+    - node_exporter
+    #- antoiner77.caddy
+    - grafana
