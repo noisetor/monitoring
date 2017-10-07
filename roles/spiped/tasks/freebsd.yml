@@ -22,7 +22,7 @@
     dest: /usr/local/etc
     state: directory
     owner: root
-    group: root
+    group: wheel
   tags:
     - freebsd
 
