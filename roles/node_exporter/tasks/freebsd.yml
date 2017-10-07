@@ -14,7 +14,7 @@
 - name: install FreeBSD configuration file
   when: ansible_system == "FreeBSD"
   copy:
-    src: /usr/local/etc/rc.d/node_exporter
+    src: usr/local/etc/rc.d/node_exporter
     dest: /usr/local/etc/rc.d/node_exporter
     mode: 0555
   tags:

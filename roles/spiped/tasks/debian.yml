@@ -10,14 +10,14 @@
 
 - name: install spiped systemd unit
   copy:
-    src: /etc/systemd/system/spiped.service
+    src: etc/systemd/system/spiped.service
     dest: /etc/systemd/system/spiped.service
   tags:
     - debian
     
 - name: copy the noisetor keyfile
   copy:
-    src: /etc/spiped/noisetor.key
+    src: etc/spiped/noisetor.key
     dest: /etc/spiped/noisetor.key
     owner: root
     group: root

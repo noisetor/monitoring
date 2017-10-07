@@ -8,7 +8,7 @@
 
 - name: copy the noisetor keyfile
   copy:
-    src: /etc/spiped/noisetor.key
+    src: etc/spiped/noisetor.key
     dest: /etc/spiped/noisetor.key
     owner: root
     group: wheel
