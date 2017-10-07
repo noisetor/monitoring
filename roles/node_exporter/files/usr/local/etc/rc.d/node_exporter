@@ -29,7 +29,7 @@ load_rc_config $name
 
 : ${node_exporter_enable:="NO"}
 : ${node_exporter_user:="nobody"}
-: ${node_exporter_group:="nobody"}
+: ${node_exporter_group:="nogroup"}
 : ${node_exporter_args:=""}
 : ${node_exporter_listen_address:=":9100"}
 : ${node_exporter_textfile_dir:="/var/tmp/node_exporter"}
