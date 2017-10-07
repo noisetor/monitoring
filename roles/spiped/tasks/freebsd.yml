@@ -29,6 +29,7 @@
 - name: add rc.conf configuration
   blockinfile:
     path: /usr/local/etc/rc.conf
+    create: true
     block: |
       spiped_enable="YES"
       spiped_pipes="noisetor"
