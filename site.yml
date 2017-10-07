@@ -13,3 +13,4 @@
   tags: [node_exporter]
   roles:
     - node_exporter
+    - spiped
