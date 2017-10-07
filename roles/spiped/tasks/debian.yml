@@ -14,7 +14,16 @@
     dest: /etc/systemd/system/spiped.service
   tags:
     - debian
-    
+
+- name: ensure spiped directory exists
+  file:
+    dest: /etc/spiped
+    owner: root
+    group: root
+    state: directory
+  tags:
+    - debian
+
 - name: copy the noisetor keyfile
   copy:
     src: etc/spiped/noisetor.key

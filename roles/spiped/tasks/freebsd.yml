@@ -16,6 +16,16 @@
   tags:
     - freebsd
 
+
+- name: ensure /usr/local/etc exists
+  file:
+    dest: /usr/local/etc
+    state: directory
+    owner: root
+    group: root
+  tags:
+    - freebsd
+
 - name: add rc.conf configuration
   blockinfile:
     path: /usr/local/etc/rc.conf
