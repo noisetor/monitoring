@@ -19,7 +19,7 @@
     src: etc/default/node_exporter
     dest: /etc/default/node_exporter
     group: root
-    user: root
+    owner: root
   tags:
     - debian
 
@@ -28,7 +28,7 @@
   copy:
     src: /etc/systemd/system/node_exporter.service
     dest: /etc/systemd/system/node_exporter.service
-    user: root
+    owner: root
     group: root
   tags:
     - debian

@@ -19,7 +19,7 @@
   copy:
     src: /etc/spiped/noisetor.key
     dest: /etc/spiped/noisetor.key
-    user: root
+    owner: root
     group: root
     mode: 0600
   tags:
