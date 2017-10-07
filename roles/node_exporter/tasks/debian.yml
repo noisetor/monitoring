@@ -33,7 +33,7 @@
   tags:
     - debian
   notify:
-    - systemd reload unit
+    - restart node_exporter
 
 - name: Enable and start node_exporter service (Debian)
   when: ansible_distribution == "Debian"
