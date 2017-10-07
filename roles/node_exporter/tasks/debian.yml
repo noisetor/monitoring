@@ -16,7 +16,7 @@
 - name: install environment default file (Debian)
   when: ansible_distribution == "Debian"
   copy:
-    src: /etc/default/node_exporter
+    src: etc/default/node_exporter
     dest: /etc/default/node_exporter
     group: root
     user: root
