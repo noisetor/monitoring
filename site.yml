@@ -8,6 +8,15 @@
     - node_exporter
     - prometheus
     - snmp_exporter
+    - spiped
+  vars:
+    spiped_connections:
+      - name: exit-01
+        port: 9101
+        dest: exit-01a.noisetor.net
+      - name: exit-03
+        port: 9102
+        dest: exit-03a.noisetor.net
 
 - hosts: node_exporter
   tags: [node_exporter]

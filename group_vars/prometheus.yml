@@ -1,3 +1,4 @@
+spiped_connections:
 caddy_features: http.prometheus
 caddy_setcap: yes
 caddy_systemd_capabilities_enabled: True

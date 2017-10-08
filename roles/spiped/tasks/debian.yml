@@ -42,3 +42,23 @@
     daemon_reload: yes
   tags:
     - debian
+
+- name: install systemd client unit files
+  with_items: "{{ spiped_connections }}"
+  template:
+    src: etc/systemd/system/spiped-client.unit
+    dest: "/etc/systemd/system/spiped-client-{{ item.name }}.unit"
+    owner: root
+    group: root
+  tags:
+    - debian
+
+- name: start/enable the spiped clients
+  with_items: "{{ spiped_connections }}"
+  systemd:
+    name: "spiped-client-{{ item.name }}"
+    state: started
+    enabled: yes
+    daemon_reload: yes
+  tags:
+    - debian
