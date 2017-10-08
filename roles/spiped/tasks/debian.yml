@@ -14,6 +14,7 @@
     dest: /etc/systemd/system/spiped.service
   tags:
     - debian
+  when: spiped_connections.count == 0
 
 - name: ensure spiped directory exists
   file:
@@ -34,7 +35,7 @@
   tags:
     - debian
 
-- name: enable the systemd spiped service
+- name: enable the systemd spiped client receiving service
   service:
     name: spiped
     state: running
@@ -42,6 +43,7 @@
     daemon_reload: yes
   tags:
     - debian
+  when: spiped_connections.count == 0
 
 - name: install systemd client unit files
   with_items: "{{ spiped_connections }}"
@@ -53,7 +55,7 @@
   tags:
     - debian
 
-- name: start/enable the spiped clients
+- name: start/enable the outbound spiped clients
   with_items: "{{ spiped_connections }}"
   systemd:
     name: "spiped-client-{{ item.name }}"
