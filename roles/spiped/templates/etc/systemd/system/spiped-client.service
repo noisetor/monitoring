@@ -2,7 +2,7 @@
 Description=spiped tunnel for node_exporter
 
 [Service]
-ExecStart=/usr/bin/spiped -F -d -s [127.0.0.1]:{{ item.port }} -t [{{ item.dest }}:9101 -k /etc/spiped/noisetor.key
+ExecStart=/usr/bin/spiped -F -d -s [127.0.0.1]:{{ item.port }} -t {{ item.dest }}:9101 -k /etc/spiped/noisetor.key
 
 [Install]
 WantedBy=multi-user.target

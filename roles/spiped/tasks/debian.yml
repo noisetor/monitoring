@@ -46,8 +46,8 @@
 - name: install systemd client unit files
   with_items: "{{ spiped_connections }}"
   template:
-    src: etc/systemd/system/spiped-client.unit
-    dest: "/etc/systemd/system/spiped-client-{{ item.name }}.unit"
+    src: etc/systemd/system/spiped-client.service
+    dest: "/etc/systemd/system/spiped-client-{{ item.name }}.service"
     owner: root
     group: root
   tags:
