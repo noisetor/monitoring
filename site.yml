@@ -8,7 +8,6 @@
     - node_exporter
     - prometheus
     - snmp_exporter
-    - spiped
   vars:
     spiped_connections:
       - name: exit-01
