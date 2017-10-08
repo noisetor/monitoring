@@ -28,7 +28,7 @@ route:
   repeat_interval: 3h 
 
   # A default receiver
-  receiver: Noisetor
+  receiver: noisetor-slack
 
   # All the above attributes are inherited by all child routes and can 
   # overwritten on each.

@@ -6,7 +6,7 @@ User=nobody
 Group=nogroup
 PermissionsStartOnly=true
 ExecStartPre=/sbin/setcap 'cap_net_raw+ep' {{ alertmanager_path }}/alertmanager
-ExecStart={{ alertmanager_path }}/alertmanager -web.listen-address "{{ alertmanager_listen_address }}" -config.file {{ alertmanager_path }}/alertmanager.yml
+ExecStart={{ alertmanager_path }}/alertmanager -web.listen-address "{{ alertmanager_listen_address }}" -config.file {{ alertmanager_install_path }}/alertmanager.yml -storage.path {{ alertmanager_install_path }}/data -mesh.listen-address ""
 KillMode=process
 Restart=always
 
