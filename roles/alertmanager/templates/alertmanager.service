@@ -1,0 +1,14 @@
+[Unit]
+Description=Prometheus AlertManager
+
+[Service]
+User=nobody
+Group=nogroup
+PermissionsStartOnly=true
+ExecStartPre=/sbin/setcap 'cap_net_raw+ep' {{ alertmanager_path }}/alertmanager
+ExecStart={{ alertmanager_path }}/alertmanager -web.listen-address "{{ alertmanager_listen_address }}" -config.file {{ alertmanager_path }}/alertmanager.yml
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

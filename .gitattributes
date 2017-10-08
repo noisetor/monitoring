@@ -1,1 +1,2 @@
 roles/spiped/files/etc/spiped/noisetor.key filter=git-crypt diff=git-crypt
+roles/alertmanager/vars/main.yml filter=git-crypt diff=git-crypt

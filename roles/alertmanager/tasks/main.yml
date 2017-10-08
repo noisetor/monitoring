@@ -1,0 +1,37 @@
+- name: create alertmanager directories
+  file:
+    path: "{{ item }}"
+    state: directory
+    mode: 0755
+  with_items:
+    - "{{ alertmanager_install_path }}"
+
+- name: untar alertmanager tarball
+  unarchive:
+    src: "{{ alertmanager_tarball_url }}"
+    dest: "{{ alertmanager_install_path }}"
+    mode: 0755
+    owner: root
+    group: root
+    copy: no
+
+- name: install configuration file
+  template:
+    src: alertmanager.yml
+    dest: "{{ alertmanager_install_path }}/alertmanager.yml"
+  notify:
+    - restart alertmanager
+
+- name: install alertmanager systemd service file
+  notify:
+    - restart alertmanager
+  template:
+    src: alertmanager.service
+    dest: /etc/systemd/system/alertmanager.service
+
+- name: enable and start the alertmanager service
+  systemd:
+    name: alertmanager.service
+    state: started
+    enabled: true
+    daemon_reload: yes
