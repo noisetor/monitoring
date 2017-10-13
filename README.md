@@ -30,8 +30,8 @@ Setup a hosts file
     [prometheus]
     prometheus-server
 
-    [node_exporter]
-    node-with-node-exporter
+    [grafana]
+    grafana-server
 
 Optional variables that you might need
 

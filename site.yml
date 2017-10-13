@@ -13,6 +13,5 @@
 - hosts: grafana
   tags: [grafana]
   roles:
-    - node_exporter
     #- antoiner77.caddy
     - grafana
