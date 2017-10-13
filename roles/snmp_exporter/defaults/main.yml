@@ -1,7 +1,7 @@
 go_arch: amd64
 
 snmp_exporter_install_path: /srv/snmp_exporter
-snmp_exporter_version: 0.6.0
+snmp_exporter_version: 0.7.0
 snmp_exporter_download_url: https://github.com/prometheus/snmp_exporter/releases/download
 
 snmp_exporter_listen_address: "localhost:9116"
