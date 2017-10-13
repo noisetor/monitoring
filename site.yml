@@ -1,15 +1,14 @@
+- hosts: all
+  tags: [node_exporter]
+  roles:
+    - node_exporter
+
 - hosts: prometheus
   tags: [prometheus]
   roles:
     - blackbox_exporter
-    - node_exporter
     - prometheus
     - snmp_exporter
-
-- hosts: node_exporter
-  tags: [node_exporter]
-  roles:
-    - node_exporter
 
 - hosts: grafana
   tags: [grafana]
