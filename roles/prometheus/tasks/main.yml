@@ -58,6 +58,20 @@
     - rules/*.rules
   notify:
   - reload prometheus
+  when: prometheus_version | version_compare('2.0', '<')
+
+- name: Configure yaml rules files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ prometheus_rule_path }}/"
+    owner: "{{ prometheus_user }}"
+    group: "{{ prometheus_group }}"
+    mode: 0644
+  with_fileglob:
+    - rules/*.yml
+  notify:
+  - reload prometheus
+  when: prometheus_version | version_compare('2.0', '>=')
 
 - name: Install prometheus systemd service file
   notify:
@@ -65,6 +79,15 @@
   template:
     src: prometheus.service
     dest: /etc/systemd/system/prometheus.service
+  when: prometheus_version | version_compare('2.0', '<')
+
+- name: Install prometheus 2.0 systemd service file
+  notify:
+  - restart prometheus
+  template:
+    src: prometheus2.service
+    dest: /etc/systemd/system/prometheus.service
+  when: prometheus_version | version_compare('2.0', '>=')
 
 - name: Enable and start prometheus service
   systemd:

@@ -11,8 +11,11 @@ global:
 
 # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
 rule_files:
+{% if prometheus_version | version_compare('2.0', '>=') %}
+  - "rules/node.rules.yml"
+{% else %}
   - "rules/node.rules"
-  # - "second.rules"
+{% endif %}
 
 # A scrape configuration containing exactly one endpoint to scrape:
 # Here it's Prometheus itself.
