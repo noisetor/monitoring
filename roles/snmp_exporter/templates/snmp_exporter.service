@@ -1,5 +1,5 @@
 [Unit]
-Description=Prometheus Blackbox Exporter
+Description=Prometheus SNMP Exporter
 
 [Service]
 User=nobody
