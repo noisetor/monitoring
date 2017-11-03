@@ -43,9 +43,12 @@
 - name: Configure Prometheus
   notify:
   - reload prometheus
-  template:
-    src: prometheus.yml.j2
+  copy:
+    content: "{{ prometheus_config | to_nice_yaml(indent=2) }}"
     dest: "{{ prometheus_config_path }}/prometheus.yml"
+    mode: 0755
+    owner: "{{ prometheus_user }}"
+    group: "{{ prometheus_group }}"
 
 - name: Configure rules files
   copy:

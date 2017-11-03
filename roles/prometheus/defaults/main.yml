@@ -18,3 +18,20 @@ prometheus_tarball_url: "{{ prometheus_download_url }}/v{{ prometheus_version }}
 prometheus_path: "{{ prometheus_install_path }}/prometheus-{{ prometheus_version }}.linux-{{ go_arch }}"
 
 prometheus_storage_tsdb_retention: "90d"
+
+prometheus_config:
+  global:
+    scrape_interval: "15s"
+    evaluation_interval: "15s"
+    scrape_timeout: "10s"
+  rules_files:
+  - 'rules/*.rules'
+  scrape_configs:
+  - job_name: 'prometheus'
+    static_configs:
+    - targets: ['localhost:9090']
+  - job_name: 'node'
+    scrape_interval: 5s
+    static_configs:
+    - targets:
+      - localhost:9100
