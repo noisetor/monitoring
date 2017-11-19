@@ -35,3 +35,5 @@ prometheus_config:
     static_configs:
     - targets:
       - localhost:9100
+      - localhost:9101
+      - localhost:9102
