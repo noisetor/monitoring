@@ -5,7 +5,7 @@ alertmanager_install_path: /srv/alertmanager
 alertmanager_version: 0.9.1
 alertmanager_download_url: https://github.com/prometheus/alertmanager/releases/download
 
-alertmanager_listen_address: "localhost:9117"
+alertmanager_listen_address: "127.0.0.1:9117"
 
 alertmanager_tarball_url: "{{ alertmanager_download_url }}/v{{ alertmanager_version }}/alertmanager-{{ alertmanager_version }}.{{ platform }}-{{ go_arch }}.tar.gz"
 alertmanager_path: "{{ alertmanager_install_path }}/alertmanager-{{ alertmanager_version }}.{{ platform }}-{{ go_arch }}"
