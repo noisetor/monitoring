@@ -1,0 +1,9 @@
+groups:
+- name: node.rules
+  rules:
+  - record: instance:node_cpus:count
+    expr: count(node_cpu{mode="idle"}) WITHOUT (cpu, mode)
+  - record: instance_cpu:node_cpu_not_idle:rate5m
+    expr: sum(rate(node_cpu{mode!="idle"}[5m])) WITHOUT (mode)
+  - record: instance_mode:node_cpu:rate5m
+    expr: sum(rate(node_cpu[5m])) WITHOUT (cpu)

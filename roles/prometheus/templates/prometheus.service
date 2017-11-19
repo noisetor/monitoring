@@ -1,5 +1,5 @@
 [Unit]
-Description=Prometheus Node Exporter
+Description=Prometheus Server
 
 [Service]
 User={{ prometheus_user }}
