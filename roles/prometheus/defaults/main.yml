@@ -24,7 +24,7 @@ prometheus_config:
     scrape_interval: "15s"
     evaluation_interval: "15s"
     scrape_timeout: "10s"
-  rules_files:
+  rule_files:
   - 'rules/*.rules'
   scrape_configs:
   - job_name: 'prometheus'
