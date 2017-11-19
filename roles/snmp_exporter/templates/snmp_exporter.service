@@ -1,11 +1,11 @@
 [Unit]
-Description=Prometheus Blackbox Exporter
+Description=Prometheus SNMP Exporter
 
 [Service]
 User=nobody
 Group=nogroup
 EnvironmentFile=-/etc/default/snmp_exporter
-ExecStart={{ snmp_exporter_path }}/snmp_exporter -web.listen-address "{{ snmp_exporter_listen_address }}" -config.file {{ snmp_exporter_install_path }}/snmp.yml
+ExecStart={{ snmp_exporter_path }}/snmp_exporter --web.listen-address "{{ snmp_exporter_listen_address }}" --config.file {{ snmp_exporter_install_path }}/snmp.yml
 KillMode=process
 Restart=always
 

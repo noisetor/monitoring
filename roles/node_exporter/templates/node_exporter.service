@@ -1,10 +1,11 @@
+#jinja2: trim_blocks:False
 [Unit]
 Description=Prometheus Node Exporter
 
 [Service]
 User=nobody
 Group=nogroup
-ExecStart={{ node_exporter_path }}/node_exporter -web.listen-address "{{ node_exporter_listen_address }}" -collectors.enabled "{{ node_exporter_collectors }}" -collector.textfile.directory {{ node_exporter_textfiles_path }}
+ExecStart={{ node_exporter_path }}/node_exporter --web.listen-address "{{ node_exporter_listen_address }}" --collector.textfile.directory "{{ node_exporter_textfiles_path }}" {% for collector_enable in node_exporter_collectors_enable %}--collector.{{ collector_enable }}{% endfor %} {% for collector_disable in node_exporter_collectors_disable %}--no-collector.{{ collector_disable }}{% endfor %}
 KillMode=process
 Restart=always
 
