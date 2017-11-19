@@ -7,3 +7,7 @@ groups:
     expr: sum(rate(node_cpu{mode!="idle"}[5m])) WITHOUT (mode)
   - record: instance_mode:node_cpu:rate5m
     expr: sum(rate(node_cpu[5m])) WITHOUT (cpu)
+  - record: job:node_network_transmit_bytes:rate5m
+    expr: rate(node_network_transmit_bytes[5m])
+  - record: job:node_network_receive_bytes:rate5m
+    expr: rate(node_network_receive_bytes[5m])

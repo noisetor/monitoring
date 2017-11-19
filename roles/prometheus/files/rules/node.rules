@@ -1,3 +1,4 @@
+# Get transfer rates over 5 minute intervals for percentile calculation
 job:node_network_transmit_bytes:rate5m = rate(node_network_transmit_bytes[5m])
 job:node_network_receive_bytes:rate5m = rate(node_network_receive_bytes[5m])
 
