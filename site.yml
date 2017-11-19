@@ -1,8 +1,3 @@
-- hosts: all
-  tags: [node_exporter]
-  roles:
-    - node_exporter
-
 - hosts: prometheus
   remote_user: root
   tags: [prometheus]
@@ -24,10 +19,14 @@
         port: 9102
         dest: exit-03a.noisetor.net
 
-- hosts: grafana
-  tags: [grafana]
+- hosts: node_exporter
+  tags: [node_exporter]
   roles:
     - node_exporter
     - spiped
+
+- hosts: grafana
+  tags: [grafana]
+  roles:
     - antoiner77.caddy
     - grafana
