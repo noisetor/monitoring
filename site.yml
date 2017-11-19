@@ -2,6 +2,7 @@
   remote_user: root
   tags: [prometheus]
   roles:
+    - hardening
     - antoiner77.caddy
     - blackbox_exporter
     - grafana
