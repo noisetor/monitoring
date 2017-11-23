@@ -56,3 +56,8 @@ receivers:
 - name: noisetor-slack
   slack_configs:
     - channel: '#noisetor'
+      text: "{{ '{{' }} template 'slack.noisetor.next' . {{ '}}' }}"
+
+templates:
+  - '{{ alertmanager_install_path }}/templates/noisetor.tmpl'
+

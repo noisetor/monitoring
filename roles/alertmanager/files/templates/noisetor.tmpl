@@ -1,0 +1,5 @@
+{{ define "slack.noisetor.text" }}
+  {{ range .Alerts }}
+    {{ .Labels.instance }}
+  {{ end }}
+{{ end }}

@@ -30,6 +30,26 @@
     group: nogroup
     mode: 0777
 
+- name: create alertmanager templates directory
+  file:
+    dest: "{{ alertmanager_install_path }}/templates"
+    state: directory
+    owner: nobody
+    group: nogroup
+    mode: 0777
+
+- name: copy alertmanager template files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ alertmanager_install_path }}/templates/"
+    owner: nobody
+    group: nogroup
+    mode: 0644
+  with_fileglob:
+    - templates/*.tmpl
+  notify:
+  - restart alertmanager
+
 - name: install alertmanager systemd service file
   notify:
     - restart alertmanager

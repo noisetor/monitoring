@@ -22,7 +22,13 @@ ALERT InstancePrometheusDown
 
 
 ALERT InstanceLowTraffic
-  IF (rate(node_network_transmit_bytes{instance!="localhost:9090"}[5m]) * 8 < 100.0)
+  IF max(
+      sum(
+        irate(
+          node_network_transmit_bytes{instance!="localhost:9100"}[5m]
+        )
+      )
+    ) * 8 < 400.0
   FOR
   10m
   LABELS {
@@ -30,5 +36,5 @@ ALERT InstanceLowTraffic
   }
   ANNOTATIONS {
     SUMMARY = "{{$labels.instance}}: Low relay rate",
-    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 100Mbps for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
+    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 400Mbps for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
   }
