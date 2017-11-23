@@ -1,5 +1,5 @@
 ALERT InstanceSSHDown
-  IF (probe_success{job="blackbox_ssh"} = 0)
+  IF (probe_success{job="blackbox_ssh"} == 0)
   FOR 2m
   LABELS {
     severity="page"
@@ -10,7 +10,7 @@ ALERT InstanceSSHDown
   }
 
 ALERT InstancePrometheusDown
-  IF (scrape_samples_scraped{job="node"} = 0)
+  IF (scrape_samples_scraped{job="node"} == 0)
   FOR 2m
   LABELS {
     severity="page"
@@ -29,6 +29,6 @@ ALERT InstanceLowTraffic
     severity="notice"
   }
   ANNOTATIONS {
-    SUMMARY = "{{$labels.instance}}: Low relay rate"
+    SUMMARY = "{{$labels.instance}}: Low relay rate",
     DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 100Mbps for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
   }
