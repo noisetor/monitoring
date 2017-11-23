@@ -17,24 +17,28 @@ ALERT InstancePrometheusDown
   }
   ANNOTATIONS {
     SUMMARY = "${{labels.instance}}: No Prometheus metrics",
-    DESCRIPTION = "{{$labels.instance}}: Prometheus has not been able to scrape metrics for over 2 minutes. Failure of this alone might indicate spiped between the two hosts has failed" 
-  } 
+    DESCRIPTION = "{{$labels.instance}}: Prometheus has not been able to scrape metrics for over 2 minutes. Failure of this alone might indicate spiped between the two hosts has failed"
+  }
 
+ALERT InstanceTorHTTPDown
+  IF probe_success{job="blackbox_http"} == 0
+  FOR 5m
+  LABELS {
+    severity="page"
+  }
+  ANNOTATIONS {
+    SUMMARY = "${{ labels.instance}}: tor HTTP service down",
+    DESCRIPTION = "{{$labels.instance}}: tor HTTP service has been unreachable for 5 minutes. This indicates that the tor daemon responsible has died and is unable to restart."
+  }
 
+# TODO: Figure out if there's a better way than two (by instance)
 ALERT InstanceLowTraffic
-  IF max(
-      sum(
-        irate(
-          node_network_transmit_bytes{instance!="localhost:9100"}[5m]
-        )
-      )
-    ) * 8 < 400.0
-  FOR
-  10m
+  IF max(sum(irate(node_network_transmit_bytes{instance!="localhost:9100"}[5m])) by (instance)) by (instance) / 1024 / 1024 < 35.0
+  FOR 15m
   LABELS {
     severity="notice"
   }
   ANNOTATIONS {
     SUMMARY = "{{$labels.instance}}: Low relay rate",
-    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 400Mbps for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
+    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 35MiB/sec for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
   }

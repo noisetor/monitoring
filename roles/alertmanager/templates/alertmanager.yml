@@ -3,7 +3,7 @@ global:
 
 # The directory from which notification templates are read.
 templates: 
-- '/srv/alertmanager/template/*.tmpl'
+- "{{ alertmanager_install_path }}/templates/*.tmpl"
 
 # The root route on which each incoming alert enters.
 route:
@@ -56,8 +56,6 @@ receivers:
 - name: noisetor-slack
   slack_configs:
     - channel: '#noisetor'
-      text: "{{ '{{' }} template 'slack.noisetor.next' . {{ '}}' }}"
-
-templates:
-  - '{{ alertmanager_install_path }}/templates/noisetor.tmpl'
+      text: |
+        {{ "{{" }} template "slack.noisetor.text" . {{ "}}" }}
 
