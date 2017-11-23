@@ -22,7 +22,7 @@ ALERT InstancePrometheusDown
 
 
 ALERT InstanceLowTraffic
-  IF (rate(node_network_transmit_bytes[5m]) * 8 < 100.0)
+  IF (rate(node_network_transmit_bytes{instance!="localhost:9090"}[5m]) * 8 < 100.0)
   FOR
   10m
   LABELS {

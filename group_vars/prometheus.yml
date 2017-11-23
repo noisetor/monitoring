@@ -14,3 +14,14 @@ caddy_config: |
       transparent
     }
   }
+
+  alertmanager.noisetor.net {
+    gzip
+    prometheus
+    tls p@trickod.com
+    log /var/log/caddy/access.log
+
+    proxy / localhost:9117 {
+      transparent
+    }
+  }

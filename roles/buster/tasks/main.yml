@@ -1,0 +1,5 @@
+---
+- name: configure buster apt source
+  apt_repository:
+    repo: "deb http://httpredir.debian.org/debian buster main"
+    state: present

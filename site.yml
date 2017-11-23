@@ -3,6 +3,8 @@
   tags: [prometheus]
   roles:
     - hardening
+    - buster
+    - golang
     - antoiner77.caddy
     - blackbox_exporter
     - grafana
