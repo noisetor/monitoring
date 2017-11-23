@@ -1,0 +1,34 @@
+ALERT InstanceSSHDown
+  IF (probe_success{job="blackbox_ssh"} = 0)
+  FOR 2m
+  LABELS {
+    severity="page"
+  }
+  ANNOTATIONS {
+    SUMMARY = "{{$labels.instance}}: SSH unavailable",
+    DESCRIPTION = "{{$labels.instance}}: SSH probe has failed for last 2 minutes; instance might be offline"
+  }
+
+ALERT InstancePrometheusDown
+  IF (scrape_samples_scraped{job="node"} = 0)
+  FOR 2m
+  LABELS {
+    severity="page"
+  }
+  ANNOTATIONS {
+    SUMMARY = "${{labels.instance}}: No Prometheus metrics",
+    DESCRIPTION = "{{$labels.instance}}: Prometheus has not been able to scrape metrics for over 2 minutes. Failure of this alone might indicate spiped between the two hosts has failed" 
+  } 
+
+
+ALERT InstanceLowTraffic
+  IF (rate(node_network_transmit_bytes[5m]) * 8 < 100.0)
+  FOR
+  10m
+  LABELS {
+    severity="notice"
+  }
+  ANNOTATIONS {
+    SUMMARY = "{{$labels.instance}}: Low relay rate"
+    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 100Mbps for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
+  }
