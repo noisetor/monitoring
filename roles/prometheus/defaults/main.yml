@@ -27,44 +27,44 @@ prometheus_config:
   rule_files:
   - 'rules/*.rules'
   scrape_configs:
-  - job_name: 'prometheus'
-    static_configs:
-    - targets: ['localhost:9090']
-  - job_name: blackbox_ssh
-    metrics_path: "/probe"
-    params:
-      module: [ssh_banner]
-    static_configs:
+    - job_name: 'prometheus'
+      static_configs:
+        - targets: ['localhost:9090']
+    - job_name: blackbox_ssh
+      metrics_path: "/probe"
+      params:
+        module: [ssh_banner]
+      static_configs:
+        - targets:
+            - exit-01a.noisetor.net:22
+            - exit-03a.noisetor.net:22
+            - bridge-01.noisetor.net:22
+      relabel_configs:
+        - source_labels: [__address__]
+          target_label: __param_target
+        - source_labels: [__param_target]
+          target_label: instance
+        - target_label: __address__
+          replacement:  "{{ blackbox_exporter_listen_address }}"
+    - job_name: blackbox_http
+      metrics_path: "/probe"
+      params:
+        module: [http_2xx]
+      static_configs:
+        - targets:
+            - http://exit-01a.noisetor.net
+            - http://exit-03a.noisetor.net
+      relabel_configs:
+        - source_labels: [__address__]
+          target_label: __param_target
+        - source_labels: [__param_target]
+          target_label: instance
+        - target_label: __address__
+          replacement:  "{{ blackbox_exporter_listen_address }}"
+    - job_name: 'node'
+      scrape_interval: 5s
+      static_configs:
       - targets:
-          - exit-01a.noisetor.net
-          - exit-03a.noisetor.net
-          - bridge-01.noisetor.net
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement:  "{{ blackbox_exporter_listen_address }}"
-  - job_name: blackbox_http
-    metrics_path: "/probe"
-    params:
-      module: [http_2xx]
-    static_configs:
-      - targets:
-          - https://exit-01a.noisetor.net
-          - https://exit-03a.noisetor.net
-    relabel_configs:
-      - source_labels: [__address__]
-        target_label: __param_target
-      - source_labels: [__param_target]
-        target_label: instance
-      - target_label: __address__
-        replacement:  "{{ blackbox_exporter_listen_address }}"
-  - job_name: 'node'
-    scrape_interval: 5s
-    static_configs:
-    - targets:
-      - localhost:9100
-      - localhost:9101
-      - localhost:9102
+        - localhost:9100
+        - localhost:9101
+        - localhost:9102
