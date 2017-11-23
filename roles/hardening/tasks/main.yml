@@ -2,14 +2,14 @@
   file:
     dest: "{{ ansible_env.HOME }}/.ssh"
     state: directory
-    owner: "{{ remote_user }}"
-    group: "{{ remote_user }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     mode: 0755
 
 - name: install SSH keys
   copy:
     src: authorized_keys
     dest: "{{ ansible_env.HOME }}/.ssh/authorized_keys"
-    owner: "{{ remote_user }}"
-    group: "{{ remote_user }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     mode: 0755
