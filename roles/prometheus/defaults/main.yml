@@ -53,7 +53,13 @@ prometheus_config:
       static_configs:
         - targets:
             - http://exit-01a.noisetor.net
+            - http://exit-01b.noisetor.net
+            - http://exit-01c.noisetor.net
+            - http://exit-01d.noisetor.net
             - http://exit-03a.noisetor.net
+            - http://exit-03b.noisetor.net
+            - http://exit-03c.noisetor.net
+            - http://exit-03d.noisetor.net
       relabel_configs:
         - source_labels: [__address__]
           target_label: __param_target
