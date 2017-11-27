@@ -30,6 +30,9 @@ prometheus_config:
     - job_name: 'prometheus'
       static_configs:
         - targets: ['localhost:9090']
+    - job_name: 'alertmanager'
+      static_configs:
+        - targets: ["{{ alertmanager_listen_address }}"]
     - job_name: blackbox_ssh
       metrics_path: "/probe"
       params:
@@ -53,7 +56,13 @@ prometheus_config:
       static_configs:
         - targets:
             - http://exit-01a.noisetor.net
+            - http://exit-01b.noisetor.net
+            - http://exit-01c.noisetor.net
+            - http://exit-01d.noisetor.net
             - http://exit-03a.noisetor.net
+            - http://exit-03b.noisetor.net
+            - http://exit-03c.noisetor.net
+            - http://exit-03d.noisetor.net
             - https://noisebridge.net
       relabel_configs:
         - source_labels: [__address__]

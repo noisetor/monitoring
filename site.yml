@@ -1,5 +1,4 @@
 - hosts: prometheus
-  remote_user: root
   tags: [prometheus]
   roles:
     - hardening
