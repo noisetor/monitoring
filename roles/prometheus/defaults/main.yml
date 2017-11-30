@@ -63,6 +63,7 @@ prometheus_config:
             - http://exit-03b.noisetor.net
             - http://exit-03c.noisetor.net
             - http://exit-03d.noisetor.net
+            - https://noisebridge.net
       relabel_configs:
         - source_labels: [__address__]
           target_label: __param_target
