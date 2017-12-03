@@ -33,12 +33,12 @@ ALERT InstanceTorHTTPDown
 
 # TODO: Figure out if there's a better way than two (by instance)
 ALERT InstanceLowTraffic
-  IF max(sum(irate(node_network_transmit_bytes{instance!="localhost:9100"}[5m])) by (instance)) by (instance) / 1024 / 1024 < 35.0
+  IF max(sum(irate(node_network_transmit_bytes{instance!="localhost:9100"}[5m])) by (instance)) by (instance) / 1024 / 1024 < 15.0
   FOR 15m
   LABELS {
     severity="notice"
   }
   ANNOTATIONS {
     SUMMARY = "{{$labels.instance}}: Low relay rate",
-    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 35MiB/sec for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
+    DESCRIPTION = "{{$labels.instance}}: has been relaying at less than 15MiB/sec for the last 10 minute continually. This might indicate a tor failure of some sort. Double check the relay status in consensus"
   }
