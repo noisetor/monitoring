@@ -5,5 +5,6 @@ arion.noisetor.net ansible_user=root
 arion.noisetor.net ansible_user=root
 
 [node_exporter]
-exit-01a.noisetor.net ansible_user=root
-exit-03a.noisetor.net ansible_user=root ansible_python_interpreter=/usr/local/bin/python2.7
+exit-01a.noisetor.net  ansible_user=root
+exit-03a.noisetor.net  ansible_user=root ansible_python_interpreter=/usr/local/bin/python2.7
+bridge-01.noisetor.net ansible_user=noise

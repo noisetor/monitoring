@@ -19,6 +19,9 @@
       - name: exit-03
         port: 9102
         dest: exit-03a.noisetor.net
+      - name: bridge-01
+        port: 9103
+        dest: bridge-01.noisetor.net
 
 - hosts: node_exporter
   tags: [node_exporter]
