@@ -28,6 +28,8 @@
   roles:
     - node_exporter
     - spiped
+  vars:
+    spiped_connections: []
 
 - hosts: grafana
   tags: [grafana]
