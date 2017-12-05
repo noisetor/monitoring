@@ -11,6 +11,7 @@
     - prometheus
     - snmp_exporter
     - alertmanager
+    - spiped
   vars:
     spiped_connections:
       - name: exit-01

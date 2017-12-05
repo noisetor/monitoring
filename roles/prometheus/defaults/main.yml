@@ -78,3 +78,4 @@ prometheus_config:
         - localhost:9100
         - localhost:9101
         - localhost:9102
+        - localhost:9103
