@@ -45,6 +45,6 @@
   service:
     name: spiped
     enabled: yes
-    state: running
+    state: started
   tags:
     - freebsd

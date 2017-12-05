@@ -38,7 +38,7 @@
 - name: enable the systemd spiped client receiving service
   service:
     name: spiped
-    state: running
+    state: started
     enabled: yes
     daemon_reload: yes
   tags:
