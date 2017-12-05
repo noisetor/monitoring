@@ -14,7 +14,7 @@
     dest: /etc/systemd/system/spiped.service
   tags:
     - debian
-  when: spiped_connections.count == 0
+  when: spiped_connections|length == 0
 
 - name: ensure spiped directory exists
   file:
@@ -43,7 +43,7 @@
     daemon_reload: yes
   tags:
     - debian
-  when: spiped_connections.count == 0
+  when: spiped_connections|length == 0
 
 - name: install systemd client unit files
   with_items: "{{ spiped_connections }}"
