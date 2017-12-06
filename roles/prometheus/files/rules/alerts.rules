@@ -31,9 +31,8 @@ ALERT InstanceTorHTTPDown
     DESCRIPTION = "{{$labels.instance}}: tor HTTP service has been unreachable for 5 minutes. This indicates that the tor daemon responsible has died and is unable to restart."
   }
 
-# TODO: Figure out if there's a better way than two (by instance)
 ALERT InstanceLowTraffic
-  IF max(sum(irate(node_network_transmit_bytes{instance!="localhost:9100"}[5m])) by (instance)) by (instance) / 1024 / 1024 < 15.0
+  IF max(sum(irate(node_network_transmit_bytes{instance!="localhost:9100",instance!="localhost:9103"}[5m])) by (instance)) by (instance) / 1024 / 1024 < 15.0
   FOR 15m
   LABELS {
     severity="notice"
