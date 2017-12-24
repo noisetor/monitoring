@@ -26,6 +26,9 @@
     repo: https://github.com/prometheus/node_exporter.git
     dest: /opt/go/src/github.com/prometheus/node_exporter
     depth: 1
+    version: "v{{ node_exporter_version }}"
+  changed_when: "git_result.after|default('after') != git_result.before|default('before')"
+  register: node_exporter_checkout
 
 - name: build and install node_exporter
   environment:
@@ -33,3 +36,4 @@
   command: go install github.com/prometheus/node_exporter
   args:
     creates: /opt/go/bin/node_exporter
+  when: node_exporter_checkout.changed
