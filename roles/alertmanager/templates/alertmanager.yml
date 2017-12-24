@@ -60,3 +60,9 @@ receivers:
       text: |
         {{ "{{" }} template "slack.noisetor.text" . {{ "}}" }}
 
+- name: pushover
+  pushover_configs:
+    - send_resolved: true
+      user_key: {{ pushover_user_key }}
+      token: {{ pushover_token }}
+
