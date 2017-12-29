@@ -27,7 +27,7 @@
     dest: /opt/go/src/github.com/prometheus/node_exporter
     depth: 1
     version: "v{{ node_exporter_version }}"
-  changed_when: "git_result.after|default('after') != git_result.before|default('before')"
+  changed_when: "node_exporter_checkout.after|default('after') != node_exporter_checkout.before|default('before')"
   register: node_exporter_checkout
 
 - name: build and install node_exporter
